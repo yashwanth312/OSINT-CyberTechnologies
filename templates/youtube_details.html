@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ platform }} Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 30px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        li strong {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        p {
+            text-align: center;
+            color: #666666;
+        }
+        .video {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .video:hover {
+            background-color: #e9e9e9;
+        }
+        .video h3 {
+            color: #333333;
+            margin-bottom: 5px;
+        }
+        .video p {
+            color: #666666;
+            margin-top: 5px;
+        }
+        .thumbnail {
+            max-width: 100%;
+            height: auto;
+        }
+        .platform-logo {
+            width: 60px; /* Adjust the width as needed */
+            height: 40px; /* Adjust the height to maintain aspect ratio */
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .video {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            text-align: center; /* Center the contents horizontally */
+        }
+
+        .thumbnail {
+            display: inline-block; /* Ensure inline-block behavior */
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto; /* Center the image horizontally */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Logo" class="platform-logo">{{ platform }} Details</h1>
+
+        {% if user_details %}
+            <h2>User Details</h2>
+            <ul>
+                {% for key, value in user_details.items() %}
+                    <li><strong>{{ key }}:</strong> {{ value }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if video_details %}
+            <h2>Video Details</h2>
+            {% for video in video_details %}
+                <div class="video">
+                    <h3>{{ video['Title'] }}</h3>
+                    <img src="{{ video['Thumbnail'] }}" alt="Video Thumbnail" class="thumbnail">
+                    <p><strong>Description:</strong> {{ video['Description'] }}</p>
+                    <p><strong>Published At:</strong> {{ video['Published At'] }}</p>
+                    <p><strong>Video ID:</strong> {{ video['Video ID'] }}</p>
+                    <p><strong>Video URL:</strong> <a href="https://www.youtube.com/watch?v={{ video['Video ID'] }}" target="_blank">Watch Video</a></p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>

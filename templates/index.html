@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Source Intelligence Application</title>
+    <link rel="icon" type="image/png" href="https://sreecharan.in/img/logo.png">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            padding: 40px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+            width: calc(50% - 20px);
+        }
+        label {
+            font-weight: bold;
+            color: #555555;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease-in-out;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #6c757d;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px 0;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .logo {
+            width: 50px;
+            height: auto;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        /* Unique styling for Reddit form */
+        form.reddit {
+            /* border-top: 2px solid #ff4500; Reddit orange */
+            padding-top: 20px;
+        }
+        form.reddit h1 {
+            color: #ff4500; /* Reddit orange */
+        }
+        /* Unique styling for Youtube form */
+        form.youtube {
+            /* border-top: 2px solid #ff0000; Youtube Red */
+            padding-top: 20px;
+        }
+        form.youtube h1 {
+            color: #ff0000; /* Youtube red */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Open Source Intelligent Application</h1>
+        <form method="POST" action="/instagram">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/900px-Instagram_icon.png?20200512141346" alt="Instagram Logo">
+            <br>
+            <label for="instagram_username">Instagram Username:</label>
+            <br>
+            <input type="text" id="instagram_username" name="username" required>
+            <br>
+            <input type="submit" value="Get Instagram Details">
+        </form>
+        <form method="POST" action="/twitter">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/450px-X_logo_2023.svg.png" alt="Twitter Logo">
+            <br>
+            <label for="twitter_username">Twitter Username:</label>
+            <br>
+            <input type="text" id="twitter_username" name="username" required>
+            <br>
+            <input type="submit" value="Get Twitter Details">
+        </form>
+        <form class="reddit" method="POST" action="/reddit">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Snoo.svg/1024px-Snoo.svg.png" alt="Reddit Logo">
+            <br>
+            <label for="reddit_username">Reddit Username:</label>
+            <br>
+            <input type="text" id="reddit_username" name="username" required>
+            <br>
+            <input type="submit" value="Get Reddit Details">
+        </form>
+        <form class="youtube" method="POST" action="/youtube">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png" alt="Youtube Logo">
+            <br>
+            <label for="youtube_username">Youtube Search:</label>
+            <br>
+            <input type="text" id="youtube_username" name="username" required>
+            <br>
+            <input type="submit" value="Get Youtube Details">
+        </form>
+    </div>
+</body>
+</html>

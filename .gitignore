@@ -1,0 +1,7 @@
+data/
+__pycache__/
+osint/
+*.json
+other/
+templates/index_backup.html
+
